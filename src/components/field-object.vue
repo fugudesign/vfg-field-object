@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="schema.schema">
-      <vue-form-generator :schema="schema.schema" :model="value" :options="formOptions" v-on="$listeners" :class="schema.fieldClasses"></vue-form-generator>
+      <vue-form-generator :tag="schema.tag || 'fieldset'" :schema="schema.schema" :model="value" :options="formOptions" v-on="$listeners" :class="schema.fieldClasses"></vue-form-generator>
     </div>
     <div v-else>
       <table :id="getFieldID(schema)" :class="schema.fieldClasses">
@@ -35,60 +35,60 @@
 </template>
 
 <script>
-  import VueFormGenerator from 'vue-form-generator'
-  import Vue from 'vue'
+  import VueFormGenerator from "vue-form-generator";
+  import Vue from "vue";
 
   export default {
     mixins: [VueFormGenerator.abstractField],
 
     created() {
-      if (!this.value) this.value = {}
+      if (!this.value) this.value = {};
     },
 
     mounted() {
-      if (!this.value) return
+      if (!this.value) return;
 
-      let valueKeys = Object.keys(this.value)
-      let keyTypes = {}
+      let valueKeys = Object.keys(this.value);
+      let keyTypes = {};
 
       for (let i = 0; i < valueKeys.length; i++) {
-        let key = valueKeys[i]
-        keyTypes[key] = typeof this.value[key]
+        let key = valueKeys[i];
+        keyTypes[key] = typeof this.value[key];
       }
-      this.keyTypes = keyTypes
+      this.keyTypes = keyTypes;
     },
 
     data() {
       return {
-        newKeyType: 'string',
-        newKeyName: '',
+        newKeyType: "string",
+        newKeyName: "",
         keyTypes: {}
-      }
+      };
     },
 
     methods: {
       removeElement(index) {
-        let value = this.value
-        delete value[index]
+        let value = this.value;
+        delete value[index];
 
-        this.value = { ...value }
+        this.value = { ...value };
 
-        let keyTypes = this.keyTypes
-        delete keyTypes[index]
+        let keyTypes = this.keyTypes;
+        delete keyTypes[index];
 
-        this.keyTypes = { ...keyTypes }
-        this.$emit('model-updated', this.model, this.schema)
+        this.keyTypes = { ...keyTypes };
+        this.$emit("model-updated", this.model, this.schema);
       },
 
       addKey() {
         //TODO change to vm.$set
-        Vue.set(this.value, this.newKeyName, undefined)
-        Vue.set(this.keyTypes, this.newKeyName, this.newKeyType)
-        this.newKeyName = ''
-        this.$emit('model-updated', this.model, this.schema)
+        Vue.set(this.value, this.newKeyName, undefined);
+        Vue.set(this.keyTypes, this.newKeyName, this.newKeyType);
+        this.newKeyName = "";
+        this.$emit("model-updated", this.model, this.schema);
       }
     }
-  }
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
