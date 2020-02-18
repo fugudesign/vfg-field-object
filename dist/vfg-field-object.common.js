@@ -9803,6 +9803,7 @@ var __vue_render__ = function __vue_render__() {
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
   return _c("div", [_vm.schema.schema ? _c("div", [_c("vue-form-generator", _vm._g({
+    class: _vm.schema.fieldClasses,
     attrs: {
       schema: _vm.schema.schema,
       model: _vm.value,
@@ -9929,10 +9930,10 @@ __vue_render__._withStripped = true;
 /* style */
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-264bba67_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: { "version": 3, "sources": [], "names": [], "mappings": "", "file": "field-object.vue" }, media: undefined });
+  inject("data-v-84d4a026_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: { "version": 3, "sources": [], "names": [], "mappings": "", "file": "field-object.vue" }, media: undefined });
 };
 /* scoped */
-var __vue_scope_id__ = "data-v-264bba67";
+var __vue_scope_id__ = "data-v-84d4a026";
 /* module identifier */
 var __vue_module_identifier__ = undefined;
 /* functional template */
